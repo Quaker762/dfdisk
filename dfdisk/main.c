@@ -1,8 +1,9 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <window/terminal.h>
 
 int main()
 {
-    printf("Hello world!\n");
+    titlebar("dfdisk Fixed Disk Setup");
     return 0;
 }

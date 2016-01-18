@@ -1,0 +1,14 @@
+# depslib dependency file v1.0
+1453109370 source:e:\users\jesse\documents\github\dfdisk\dfdisk\main.c
+	<stdio.h>
+	<stdlib.h>
+	<window/terminal.h>
+
+1453109750 source:e:\users\jesse\documents\github\dfdisk\dfdisk\source\window\terminal.c
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<window/terminal.h>
+
+1453108755 e:\users\jesse\documents\github\dfdisk\dfdisk\include\window\terminal.h
+
