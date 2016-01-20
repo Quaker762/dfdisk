@@ -46,7 +46,7 @@ state_t welcome()
 
                 int idx = atoi(c);
                 change_state(idx);
-                break;
+                return;
             }
             else
             {
@@ -72,6 +72,7 @@ state_t create_part()
         if(choice == 27)
         {
             change_state(0);
+            return;
         }
 
 }
