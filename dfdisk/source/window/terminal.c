@@ -55,4 +55,22 @@ void titlebar(const char* str)
     SetConsoleTextAttribute(hConsole, 7); //Reset original console colours
 }
 
+/* Clear the screen of all text.*/
+void clear()
+{
+    system("cls");
+
+    set_cur_pos(0, 0);
+}
+
+/* Coloured Printf */
+void printf_col(const char* str)
+{
+    HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE); //Get the current window handle
+
+    SetConsoleTextAttribute(hConsole, 0xF); //Reset original console colours
+    printf("%s", str);
+    SetConsoleTextAttribute(hConsole, 7); //Reset original console colours
+}
+
 

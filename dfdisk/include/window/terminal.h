@@ -16,5 +16,6 @@
 
 void titlebar(const char* str);
 void set_cur_pos(int x, int y);
+void printf_col(const char* str);
 
 #endif // TERMINAL_H_INCLUDED
