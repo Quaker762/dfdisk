@@ -14,10 +14,12 @@
 #include <state.h>
 #include <window/terminal.h>
 
+state_t current_state;
 state_t states[4]; //Our 4 states!
 
 state_t welcome()
 {
+    clear();
     titlebar("dfdisk Fixed Disk Setup");
     set_cur_pos(0, 2);
     printf("Please choose one of the following:\n\n");
@@ -62,20 +64,29 @@ state_t create_part()
     clear();
     titlebar("dfdisk Fixed Disk Setup");
 
-    while(1)
-    {
+    char choice;
+    char lastchar;
 
-    }
+    while((choice = getch()))
+
+        if(choice == 27)
+        {
+            change_state(0);
+        }
+
 }
 
 state_t del_part()
 {
+    clear();
     titlebar("dfdisk Fixed Disk Setup");
 }
 
 state_t view_part()
 {
+    clear();
     titlebar("dfdisk Fixed Disk Setup");
+
 }
 
 void init_states()
@@ -90,7 +101,9 @@ void init_states()
 
 void change_state(int state)
 {
-    states[state]();
+    current_state = NULL;
+    current_state = states[state];
+    current_state();
 }
 
 void register_state(int idx, state_t state)

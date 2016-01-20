@@ -1,3 +1,4 @@
 *.img
 *.o
 dfdisk/obj/Debug/source/window/terminal.o
+*.exe
