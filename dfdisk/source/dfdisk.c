@@ -16,7 +16,6 @@
 
 int main()
 {
-    titlebar("dfdisk Fixed Disk Setup");
     init_states();
 
     return 0;

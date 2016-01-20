@@ -18,6 +18,7 @@ state_t states[4]; //Our 4 states!
 
 state_t welcome()
 {
+    titlebar("dfdisk Fixed Disk Setup");
     set_cur_pos(0, 2);
     printf("Please choose one of the following:\n\n");
     printf("1. Create logical partition.\n");
@@ -37,8 +38,13 @@ state_t welcome()
         {
             if(lastchar >= '1' && lastchar <= '4')
             {
-                int idx = atoi(lastchar);
-                change_state(idx - 1);
+                //REALLY REALLY YUCKY HACK TO USE ATOI!!!!
+                char* c[1];
+                c[0] = lastchar;
+
+                int idx = atoi(c);
+                change_state(idx);
+                break;
             }
             else
             {
@@ -53,15 +59,31 @@ state_t welcome()
 
 state_t create_part()
 {
+    clear();
+    titlebar("dfdisk Fixed Disk Setup");
 
+    while(1)
+    {
+
+    }
+}
+
+state_t del_part()
+{
+    titlebar("dfdisk Fixed Disk Setup");
+}
+
+state_t view_part()
+{
+    titlebar("dfdisk Fixed Disk Setup");
 }
 
 void init_states()
 {
-    states[0] = welcome;
-    states[1] = NULL;
-    states[2] = NULL;
-    states[3] = NULL;
+    states[0] = &welcome;
+    states[1] = &create_part;
+    states[2] = &del_part;
+    states[3] = &view_part;
 
     change_state(0);
 }
