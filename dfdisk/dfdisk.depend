@@ -29,3 +29,12 @@
 	<conio.h>
 	<stdlib.h>
 
+1453302500 source:f:\c++ projects\dfdisk\dfdisk\source\window\terminal.c
+	<stdio.h>
+	<string.h>
+	<windows.h>
+	<window/terminal.h>
+	<stdint.h>
+
+1453302145 f:\c++ projects\dfdisk\dfdisk\include\window\terminal.h
+
