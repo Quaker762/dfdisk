@@ -15,6 +15,7 @@
 #include <string.h>
 #include <windows.h> //WE NEED TO CHECK FOR WINDOWS HERE!!!!!
 #include <window/terminal.h>
+#include <stdint.h> //you asked me to add it, maybe it's already part of another one?
 
 /* Set the cursor position */
 void set_cur_pos(int x, int y)

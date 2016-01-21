@@ -46,6 +46,9 @@ state_t welcome()
 
                 int idx = atoi(c);
                 change_state(idx);
+                //I need to do something here I think
+
+                //
                 return;
             }
             else
@@ -81,12 +84,35 @@ state_t del_part()
 {
     clear();
     titlebar("dfdisk Fixed Disk Setup");
+
+    char choice;
+    char lastchar;
+
+    while((choice = getch()))
+
+        if(choice == 27)
+        {
+            change_state(1);
+            return;
+        }
+
 }
 
 state_t view_part()
 {
     clear();
     titlebar("dfdisk Fixed Disk Setup");
+
+    char choice;
+    char lastchar;
+
+    while((choice = getch()))
+
+        if(choice == 27)
+        {
+            change_state(2);
+            return;
+        }
 
 }
 
