@@ -18,5 +18,6 @@ void titlebar(const char* str);
 void set_cur_pos(int x, int y);
 void printf_col(const char* str);
 void printf_cent(const char* str, int y);
+void clear();
 
 #endif // TERMINAL_H_INCLUDED

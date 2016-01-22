@@ -13,6 +13,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add option="-mno-ms-bitfields" />
 					<Add directory="include" />
 				</Compiler>
 			</Target>
@@ -32,8 +33,26 @@
 		<Compiler>
 			<Add option="-Wall" />
 		</Compiler>
+		<Unit filename="include/fs/fat/fat.h" />
+		<Unit filename="include/fs/mbr.h" />
+		<Unit filename="include/state.h" />
+		<Unit filename="include/states/create_part.h" />
+		<Unit filename="include/states/del_part.h" />
+		<Unit filename="include/states/view_part.h" />
+		<Unit filename="include/states/welcome.h" />
+		<Unit filename="include/stdinc.h" />
 		<Unit filename="include/window/terminal.h" />
-		<Unit filename="main.c">
+		<Unit filename="source/dfdisk.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="source/fs/fat.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="source/fs/fat_data.h" />
+		<Unit filename="source/fs/mbr.c">
+			<Option compilerVar="CC" />
+		</Unit>
+		<Unit filename="source/state.c">
 			<Option compilerVar="CC" />
 		</Unit>
 		<Unit filename="source/window/terminal.c">

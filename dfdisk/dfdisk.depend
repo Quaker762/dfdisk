@@ -11,16 +11,21 @@
 	<windows.h>
 	<window/terminal.h>
 
-1453291855 e:\users\jesse\documents\github\dfdisk\dfdisk\include\window\terminal.h
+1453363755 e:\users\jesse\documents\github\dfdisk\dfdisk\include\window\terminal.h
 
 1453287136 source:e:\users\jesse\documents\github\dfdisk\dfdisk\source\dfdisk.c
 	<state.h>
 	<window/terminal.h>
 
-1453291645 source:e:\users\jesse\documents\github\dfdisk\dfdisk\source\state.c
+1453433158 source:e:\users\jesse\documents\github\dfdisk\dfdisk\source\state.c
 	<stdinc.h>
 	<state.h>
 	<window/terminal.h>
+	<fs/mbr.h>
+	<states/welcome.h>
+	<states/create_part.h>
+	<states/del_part.h>
+	<states/view_part.h>
 
 1453286175 e:\users\jesse\documents\github\dfdisk\dfdisk\include\state.h
 
@@ -28,4 +33,24 @@
 	<stdio.h>
 	<conio.h>
 	<stdlib.h>
+
+1453363640 source:e:\users\jesse\documents\github\dfdisk\dfdisk\source\fs\fat.c
+	<fs/fat/fat.h>
+
+1453376467 e:\users\jesse\documents\github\dfdisk\dfdisk\include\fs\fat\fat.h
+
+1453433950 e:\users\jesse\documents\github\dfdisk\dfdisk\include\fs\mbr.h
+	<stdint.h>
+
+1453469903 e:\users\jesse\documents\github\dfdisk\dfdisk\include\states\welcome.h
+
+1453432499 e:\users\jesse\documents\github\dfdisk\dfdisk\include\states\create_part.h
+
+1453432505 e:\users\jesse\documents\github\dfdisk\dfdisk\include\states\del_part.h
+
+1453470171 e:\users\jesse\documents\github\dfdisk\dfdisk\include\states\view_part.h
+	<math.h>
+
+1453434701 source:e:\users\jesse\documents\github\dfdisk\dfdisk\source\fs\mbr.c
+	<fs/mbr.h>
 

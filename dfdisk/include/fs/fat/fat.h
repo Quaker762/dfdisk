@@ -13,6 +13,4 @@
 #ifndef FAT_H_INCLUDED
 #define FAT_H_INCLUDED
 
-
-
 #endif // FAT_H_INCLUDED
