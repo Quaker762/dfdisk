@@ -69,7 +69,7 @@ void printf_col(const char* str)
     HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE); //Get the current window handle
 
     SetConsoleTextAttribute(hConsole, 0xF); //Reset original console colours
-    printf("%s\n", str);
+    printf("%s", str);
     SetConsoleTextAttribute(hConsole, 7); //Reset original console colours
 }
 

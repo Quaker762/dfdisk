@@ -13,9 +13,9 @@
 #ifndef MBR_H_INCLUDED
 #define MBR_H_INCLUDED
 
-#include <stdint.h>
-#pragma pack(1)
+#include <stdinc.h>
 
+#pragma pack(1)
 #define BYTES_PER_SECTOR 512
 
 typedef uint8_t bool;

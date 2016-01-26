@@ -19,7 +19,7 @@ const char* part_id[] =
     "XENIX",
     "XENIX",
     "FAT16",
-    "SpeedStor",
+    "     ",
     "FAT16",
     "NTFS"
 };
@@ -35,13 +35,13 @@ bool mbr_bootable(PARTITION* part)
 
 char* mbr_gettype(PARTITION* part)
 {
-    if(part->part_type == 0x06)
+    if(part->part_type == 0x06 || part->part_type == 0x04)
         return "PRI DOS";
 
     if(part->part_type == 0x05)
         return "EXT DOS";
 
-    return "";
+    return "       ";
 }
 
 char* mbr_get_fsys(PARTITION* part)

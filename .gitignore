@@ -3,3 +3,5 @@
 dfdisk/obj/Debug/source/window/terminal.o
 *.exe
 *.exe
+dfdisk/dfdisk.depend
+dfdisk/dfdisk.layout

@@ -13,8 +13,11 @@
 #ifndef STDINC_H_INCLUDED
 #define STDINC_H_INCLUDED
 
+#include <stdint.h>
 #include <stdio.h>
 #include <conio.h>
 #include <stdlib.h>
+
+uint64_t query_disk_size(FILE* file);
 
 #endif // STDINC_H_INCLUDED
