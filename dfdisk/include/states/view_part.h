@@ -49,17 +49,19 @@ state_t view_part()
     fread(&mbr, 512, 1, img); //Read sector 1
     rewind(img);
 
-    uint32_t disk_size      = query_disk_size(img);
-    uint32_t disk_sizemb    = disk_size / (1024 * 1024);
-    char* boot = "    ";
+    uint32_t    disk_size      = query_disk_size(img);
+    uint32_t    disk_sizemb    = disk_size / (1024 * 1024);
+    char*       boot = "    ";
 
     uint8_t i;
     for(i = 0; i < 4; i++)
     {
         if(mbr.partitions[i].part_size > 0)
         {
-            if(mbr_bootable(&mbr.partitions[i]))
+            if(mbr.partitions[i].boot_flag == 0x80)
                 boot = "boot";
+            else
+                boot = "    "; //Really nasty hack
 
             uint32_t part_size = (mbr.partitions[i].part_size * BYTES_PER_SECTOR) / (1024 * 1024); //MiB size of partition
             uint32_t disk_usage = (part_size * 100) / disk_sizemb;
@@ -67,6 +69,8 @@ state_t view_part()
             printf("        %d       %s   %s               %dMiB    %s       %d%% \n", i + 1, boot, mbr_gettype(&mbr.partitions[i]), part_size, mbr_get_fsys(&mbr.partitions[i]), disk_usage);
         }
     }
+
+    fclose(img);
 
     set_cur_pos(0, 23);
     printf_col("Press ESC to return");

@@ -12,7 +12,7 @@
 ===================================================================+*/
 #include <fs/mbr.h>
 
-const char* part_id[] =
+char* part_id[] =
 {
     "UKNWN",
     "FAT12",
@@ -21,7 +21,7 @@ const char* part_id[] =
     "FAT16",
     "     ",
     "FAT16",
-    "NTFS"
+    "NTFS "
 };
 
 
@@ -35,17 +35,24 @@ bool mbr_bootable(PARTITION* part)
 
 char* mbr_gettype(PARTITION* part)
 {
-    if(part->part_type == 0x06 || part->part_type == 0x04)
+    if(part->part_type == MS_DOS || part->part_type == MS_DOS2)
         return "PRI DOS";
 
-    if(part->part_type == 0x05)
+    if(part->part_type == MS_DOS_EXT)
         return "EXT DOS";
+
+    if(part->part_type == LINUX_FS)
+        return "LINUXFS";
 
     return "       ";
 }
 
 char* mbr_get_fsys(PARTITION* part)
 {
+    //Sorta hacked together...
+    if(part->part_type == LINUX_FS)
+        return "extfs";
+
     return part_id[part->part_type];
 }
 

@@ -32,9 +32,6 @@ state_t welcome()
 
     while((choice = getch()))
     {
-        printf("%c", choice);
-        set_cur_pos(8, 8);
-
         if(choice == '\r')
         {
             if(lastchar >= '1' && lastchar <= '3')
@@ -58,8 +55,11 @@ state_t welcome()
         {
             break;
         }
+            printf("%c", choice);
+            set_cur_pos(8, 8);
             lastchar = choice;
     }
+    return NULL;
 }
 
 #endif // WELCOME_H_INCLUDED

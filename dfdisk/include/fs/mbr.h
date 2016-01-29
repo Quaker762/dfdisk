@@ -18,7 +18,13 @@
 #pragma pack(1)
 #define BYTES_PER_SECTOR 512
 
+#define MS_DOS      0x04
+#define MS_DOS_EXT  0x05
+#define MS_DOS2     0x06
+#define LINUX_FS    0x83
+
 typedef uint8_t bool;
+
 
 
 //PARTITION DATA STRUCTURE

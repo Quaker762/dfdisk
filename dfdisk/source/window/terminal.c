@@ -76,7 +76,6 @@ void printf_col(const char* str)
 /* Print a centered string */
 void printf_cent(const char* str, int y)
 {
-    HANDLE  hConsole = GetStdHandle(STD_OUTPUT_HANDLE); //Get the current window handle
     int     len = strlen(str);
     int     x = (80 - len) / 2; //Centre the text
 

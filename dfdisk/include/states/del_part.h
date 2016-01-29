@@ -27,9 +27,9 @@ state_t del_part()
     fread(&mbr, 512, 1, img); //Read sector 1
     rewind(img);
 
-    uint32_t disk_size      = query_disk_size(img);
-    uint32_t disk_sizemb    = disk_size / (1024 * 1024);
-    char* boot = "    ";
+    uint32_t    disk_size      = query_disk_size(img);
+    uint32_t    disk_sizemb    = disk_size / (1024 * 1024);
+    char*       boot = "    ";
 
     uint8_t i;
     uint8_t nparts;
@@ -48,11 +48,11 @@ state_t del_part()
         }
     }
 
-    set_cur_pos(0, 10);
+    set_cur_pos(0, 15);
     printf_col("Which partition would you like to delete: [ ]");
     set_cur_pos(0, 23);
     printf_col("Press ESC to return");
-    set_cur_pos(43, 10);
+    set_cur_pos(43, 15);
 
     char choice;
     char lastchar;
@@ -71,9 +71,6 @@ state_t del_part()
     {
         char* c[1];
         c[0] = lastchar;
-
-        printf("%c", choice);
-        set_cur_pos(43, 10);
 
         if(choice == 27)
         {
@@ -114,6 +111,8 @@ state_t del_part()
                 break;
             }
         }
+        printf("%c", choice);
+        set_cur_pos(43, 15);
         lastchar = choice;
     }
 
