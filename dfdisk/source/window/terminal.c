@@ -13,7 +13,12 @@
 ===================================================================+*/
 #include <stdio.h>
 #include <string.h>
-#include <windows.h> //WE NEED TO CHECK FOR WINDOWS HERE!!!!!
+
+//  If explicity running Windows x86/i386 or Windows x64/i686
+#if defined(_WIN32) || defined(_WIN64)
+#include <Windows.h> //WE NEED TO CHECK FOR WINDOWS HERE!!!!!
+#endif
+
 #include <window/terminal.h>
 
 /* Set the cursor position */
